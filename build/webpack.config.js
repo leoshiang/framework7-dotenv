@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack')
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -161,6 +162,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env),
       'process.env.TARGET': JSON.stringify(target),
